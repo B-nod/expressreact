@@ -28,13 +28,13 @@ const Header = () => {
             <Link to="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" className='w-36' />
             </Link>
           </li>
-          <li className='max-lg:border-b max-lg:py-3 px-3'><Link to='javascript:void(0)'
-              className='text-[#007bff] hover:text-[#007bff] text-[15px] block font-semibold'>New</Link></li>
-          <li className='max-lg:border-b max-lg:py-3 px-3'><Link to='javascript:void(0)'
+          <li className='max-lg:border-b max-lg:py-3 px-3'><Link to='/'
+              className='text-[#007bff] hover:text-[#007bff] text-[15px] block font-semibold'>Home</Link></li>
+          <li className='max-lg:border-b max-lg:py-3 px-3'><Link to='/men'
               className='text-[#333] hover:text-[#007bff] text-[15px] block font-semibold'>Men</Link></li>
-          <li className='max-lg:border-b max-lg:py-3 px-3'><Link to='javascript:void(0)'
+          <li className='max-lg:border-b max-lg:py-3 px-3'><Link to='/women'
               className='text-[#333] hover:text-[#007bff] text-[15px] block font-semibold'>Women</Link></li>
-          <li className='max-lg:border-b max-lg:py-3 px-3'><Link to='javascript:void(0)'
+          <li className='max-lg:border-b max-lg:py-3 px-3'><Link to='/kid'
               className='text-[#333] hover:text-[#007bff] text-[15px] block font-semibold'>Kids</Link></li>
         </ul>
       </div>
@@ -63,6 +63,7 @@ const Header = () => {
           </span>
   
           <span className="relative">
+            <Link to='/cart'>
             <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" className="cursor-pointer fill-[#333] inline"
               viewBox="0 0 512 512">
               <path
@@ -70,10 +71,15 @@ const Header = () => {
                 data-original="#000000"></path>
             </svg>
             <span className="absolute left-auto -ml-1 top-0 rounded-full bg-red-500 px-1 py-0 text-xs text-white">0</span>
+            </Link>
+           
           </span>
+          <Link to='/login'>
           <button
             className='px-5 py-2 text-sm rounded-full text-white border-2 border-[#007bff] bg-[#007bff] hover:bg-[#004bff]'>Sign
             In</button>
+          </Link>
+         
   
           <button id="toggleOpen" className='lg:hidden'>
             <svg className="w-7 h-7" fill="#333" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

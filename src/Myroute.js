@@ -7,6 +7,11 @@ import Products from './components/admincomp/product/Products'
 import Hompage from './pages/userpages/Hompage'
 import Loginpage from './pages/userpages/Loginpage'
 import Register from './pages/userpages/Register'
+import Productpage from './pages/userpages/Productpage'
+import ProductDetail from './pages/userpages/ProductDetail'
+import Cart from './pages/userpages/Cart'
+import WomenPage from './pages/userpages/WomenPage'
+import KidPage from './pages/userpages/KidPage'
 
 const Myroute = () => {
     const [isDarkmode, setIsDarkmode] = useState(true);
@@ -22,10 +27,16 @@ const Myroute = () => {
             {/* route for normal user */}
             <Route path='/' element={<Layout/>}>
             <Route index element={<Hompage/>}/>
-            </Route>
-
+            <Route path='men' element={<Productpage/>}/>
+            <Route path='women' element={<WomenPage/>}/>
+            <Route path='kid' element={<KidPage/>}/>
+            <Route path='productdetail/:id' element={<ProductDetail/>}/>
+            <Route path='cart' element={<Cart/>}/>
             <Route path='/login' element={<Loginpage/>}/>
             <Route path='/register' element={<Register/>}/>
+            </Route>
+
+          
         </Routes>
     </Router>
     </>

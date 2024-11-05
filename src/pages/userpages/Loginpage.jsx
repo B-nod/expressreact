@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 const Loginpage = () => {
   return (
     <>
-    <div className="font-[sans-serif]">
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 items-center gap-4 h-full">
-        <div className="max-md:order-1 lg:col-span-2 md:h-screen w-full bg-[#000842] md:rounded-tr-xl md:rounded-br-xl lg:p-12 p-8">
+    <div className="font-[sans-serif] p-10" >
+      <div className="grid lg:grid-cols-2 md:grid-cols-2 items-center gap-4 h-full">
+        <div className="max-md:order-1 lg:col-span-1 md:h-screen w-full bg-[#000842]  lg:p-12 p-8">
           <img src="https://readymadeui.com/signin-image.webp" className="lg:w-[70%] w-full h-full object-contain block mx-auto" alt="login-image" />
         </div>
 
@@ -14,7 +14,7 @@ const Loginpage = () => {
           <form>
             <div className="mb-8">
               <h3 className="text-gray-800 text-3xl font-extrabold">Sign in</h3>
-              <p className="text-sm mt-4 text-gray-800">Don't have an account <Link to="javascript:void(0);" className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Register here</Link></p>
+              <p className="text-sm mt-4 text-gray-800">Don't have an account <Link to="/register" className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Register here</Link></p>
             </div>
 
             <div>
