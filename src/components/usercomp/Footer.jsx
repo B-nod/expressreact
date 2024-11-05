@@ -13,22 +13,22 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 class="text-lg font-semibold mb-6 text-white">Services</h4>
+          <h4 class="text-lg font-semibold mb-6 text-white">Categories</h4>
           <ul class="space-y-4">
-            <li><Link to="javascript:void(0)" class="text-gray-400 hover:text-white text-base">Web Development</Link></li>
-            <li><Link to="javascript:void(0)" class="text-gray-400 hover:text-white text-base">Mobile App Development</Link>
+            <li><Link to="javascript:void(0)" class="text-gray-400 hover:text-white text-base">Men</Link></li>
+            <li><Link to="javascript:void(0)" class="text-gray-400 hover:text-white text-base">Women</Link>
             </li>
-            <li><Link to="javascript:void(0)" class="text-gray-400 hover:text-white text-base">UI/UX Design</Link></li>
-            <li><Link to="javascript:void(0)" class="text-gray-400 hover:text-white text-base">Digital Marketing</Link></li>
+            <li><Link to="javascript:void(0)" class="text-gray-400 hover:text-white text-base">Kids</Link></li>
+          
           </ul>
         </div>
 
         <div class="space-y-4">
           <h4 class="text-lg font-semibold mb-6 text-white">Contact Us</h4>
-          <p class="text-gray-400 text-base">123 Main Street</p>
-          <p class="text-gray-400 text-base">City, State, Country</p>
+          <p class="text-gray-400 text-base">Suryabinayak,08</p>
+          <p class="text-gray-400 text-base">Bhaktapur, Bagmati Province, Nepal</p>
           <p class="text-gray-400 text-base">contact@example.com</p>
-          <p class="text-gray-400 text-base">+1 234 567 890</p>
+          <p class="text-gray-400 text-base">+977 9823454545</p>
         </div>
 
         <div>

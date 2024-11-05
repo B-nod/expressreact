@@ -5,6 +5,8 @@ import Layout from './components/usercomp/Layout'
 import Main from './components/admincomp/main/Main'
 import Products from './components/admincomp/product/Products'
 import Hompage from './pages/userpages/Hompage'
+import Loginpage from './pages/userpages/Loginpage'
+import Register from './pages/userpages/Register'
 
 const Myroute = () => {
     const [isDarkmode, setIsDarkmode] = useState(true);
@@ -21,6 +23,9 @@ const Myroute = () => {
             <Route path='/' element={<Layout/>}>
             <Route index element={<Hompage/>}/>
             </Route>
+
+            <Route path='/login' element={<Loginpage/>}/>
+            <Route path='/register' element={<Register/>}/>
         </Routes>
     </Router>
     </>
