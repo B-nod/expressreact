@@ -1,7 +1,56 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { signin } from '../../auth'
 
 const Loginpage = () => {
+  const navigate = useNavigate()
+
+  const[values,setValues] = useState({
+    email:'',
+    password:'',
+    error:'',
+    redirectToPage:false
+  })
+  
+  const{email,password,error,redirectToPage}=values
+
+  const handleChange=name=>event=>{
+    setValues({...values,error:false,[name]:event.target.value})
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setValues({...values, error:false});
+  
+    // Call the signin function with email and password
+  signin({email, password})
+  .then(data=>{
+    if(data.error){
+      setValues({...values,error:data.error})
+    }
+    else{
+      <Navigate to='/'/>
+    }
+  })
+      .catch((err) => {
+        // Catch any unexpected errors and set a general error message
+     
+        console.error(err);
+      });
+  };
+  
+
+  // to show error message
+const showError = () => {
+  return (
+    <div className="bg-red-100 text-red-800 p-4 rounded-lg" style={{display: error ? '' : 'none'}} role="alert">
+      <strong className="font-bold text-sm mr-4">Error!</strong>
+      <span className="block text-sm sm:inline max-sm:mt-2">{error}</span>
+    </div>
+  );
+};
+
+
   return (
     <>
     <div className="font-[sans-serif] p-10" >
@@ -16,11 +65,12 @@ const Loginpage = () => {
               <h3 className="text-gray-800 text-3xl font-extrabold">Sign in</h3>
               <p className="text-sm mt-4 text-gray-800">Don't have an account <Link to="/register" className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Register here</Link></p>
             </div>
-
+             {showError()}
+         
             <div>
               <label className="text-gray-800 text-[15px] mb-2 block" htmlFor='email'>Email</label>
               <div className="relative flex items-center">
-                <input name="email" id='email' type="text" required className="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600" placeholder="Enter email" />
+                <input name="email" id='email' type="text" required className="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600" placeholder="Enter email" onChange={handleChange('email')} value={email} />
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" className="w-[18px] h-[18px] absolute right-4" viewBox="0 0 682.667 682.667">
                   <defs>
                     <clipPath id="a" clipPathUnits="userSpaceOnUse">
@@ -38,7 +88,7 @@ const Loginpage = () => {
             <div className="mt-4">
               <label className="text-gray-800 text-[15px] mb-2 block" htmlFor='password'>Password</label>
               <div className="relative flex items-center">
-                <input name="password" id='password' type="password" required className="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600" placeholder="Enter password" />
+                <input name="password" id='password' type="password" required className="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600" placeholder="Enter password" onChange={handleChange('password')} value={password} />
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" className="w-[18px] h-[18px] absolute right-4 cursor-pointer" viewBox="0 0 128 128">
                   <path d="M64 104C22.127 104 1.367 67.496.504 65.943a4 4 0 0 1 0-3.887C1.367 60.504 22.127 24 64 24s62.633 36.504 63.496 38.057a4 4 0 0 1 0 3.887C126.633 67.496 105.873 104 64 104zM8.707 63.994C13.465 71.205 32.146 96 64 96c31.955 0 50.553-24.775 55.293-31.994C114.535 56.795 95.854 32 64 32 32.045 32 13.447 56.775 8.707 63.994zM64 88c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm0-40c-8.822 0-16 7.178-16 16s7.178 16 16 16 16-7.178 16-16-7.178-16-16-16z" data-original="#000000"></path>
                 </svg>
@@ -59,7 +109,8 @@ const Loginpage = () => {
               </div>
             </div>
             <div className="mt-8">
-              <button type="button" className="w-full py-3 px-6 text-sm tracking-wide rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none">
+              <button type="button"
+               className="w-full py-3 px-6 text-sm tracking-wide rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none" onClick={handleSubmit}>
                 Sign in
               </button>
             </div>

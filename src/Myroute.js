@@ -12,6 +12,7 @@ import ProductDetail from './pages/userpages/ProductDetail'
 import Cart from './pages/userpages/Cart'
 import WomenPage from './pages/userpages/WomenPage'
 import KidPage from './pages/userpages/KidPage'
+import EmailVerify from './pages/userpages/EmailVerify'
 
 const Myroute = () => {
     const [isDarkmode, setIsDarkmode] = useState(true);
@@ -32,8 +33,9 @@ const Myroute = () => {
             <Route path='kid' element={<KidPage/>}/>
             <Route path='productdetail/:id' element={<ProductDetail/>}/>
             <Route path='cart' element={<Cart/>}/>
-            <Route path='/login' element={<Loginpage/>}/>
-            <Route path='/register' element={<Register/>}/>
+            <Route path='login' element={<Loginpage/>}/>
+            <Route path='register' element={<Register/>}/>
+            <Route path='email/confirmation/:token' element={<EmailVerify/>}/>
             </Route>
 
           

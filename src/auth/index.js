@@ -1,8 +1,8 @@
-import { API } from "../../config";
+import { API } from "../config"
 
 // for signup
 export const signup = user =>{
-    return fetch(`${API}/postuser`,{
+    return fetch(`${API}/register`,{
         method:"POST",
         headers:{
             Accept:"application/json",
@@ -15,4 +15,44 @@ export const signup = user =>{
         return res.json()
     })
     .catch(err=>console.log(err))
+}
+
+// for signin
+export const signin = user =>{
+    return fetch(`${API}/signin`,{
+        method:"POST",
+        headers:{
+            Accept:"application/json",
+            "Content-Type":"application/json"
+        },
+
+        body:JSON.stringify(user)
+    })
+    .then(res=>{
+        return res.json()
+    })
+    .catch(err=>console.log(err))
+}
+
+
+// authenticate and to store token in localstorage
+export const authenticate = (data,next)=>{
+    if(typeof window != 'undefined'){
+        localStorage.setItem('jwt', JSON.stringify(data))
+        next()
+    }
+}
+
+//redirect user by role if authenticate
+export const isAuthenticated =()=>{
+    if(typeof window ==='undefined'){
+        return false
+    }
+    if(localStorage.getItem('jwt')){
+    return JSON.parse(localStorage.getItem('jwt'))
+    }
+    else{
+        return false
+    }
+
 }
