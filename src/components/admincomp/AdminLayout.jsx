@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
-import { Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom';
+import { isAuthenticated } from '../../auth';
 import Adminheader from './AdminHeader'
 import Adminfooter from './AdminFooter'
 import Main from './main/Main'
@@ -7,6 +8,11 @@ import Sidebar from './Sidebar/Sidebar'
 
 const AdminLayout = ({ isDarkmode, setIsDarkmode }) => {
     const [showSideBar, setShowSideBar] = useState(false);
+
+      // Check if the user is authenticated and has the admin role
+  if (!isAuthenticated() || isAuthenticated().user.role !== 1) {
+    return <Navigate to='/signin' />;
+  }
     
   return (
     <>

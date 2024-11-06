@@ -13,6 +13,7 @@ import Cart from './pages/userpages/Cart'
 import WomenPage from './pages/userpages/WomenPage'
 import KidPage from './pages/userpages/KidPage'
 import EmailVerify from './pages/userpages/EmailVerify'
+import Profile from './pages/userpages/Profile'
 
 const Myroute = () => {
     const [isDarkmode, setIsDarkmode] = useState(true);
@@ -36,6 +37,7 @@ const Myroute = () => {
             <Route path='login' element={<Loginpage/>}/>
             <Route path='register' element={<Register/>}/>
             <Route path='email/confirmation/:token' element={<EmailVerify/>}/>
+            <Route path='profile' element={<Profile/>}/>
             </Route>
 
           

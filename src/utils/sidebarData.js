@@ -1,6 +1,5 @@
 import {
     MdDashboard,
-    MdLock,
     MdPerson,
     MdShoppingCart,
     MdEmail,
@@ -16,10 +15,11 @@ import {
     MdMenuBook,
   } from "react-icons/md";
   import { GiOverInfinity } from "react-icons/gi";
-  import { IoDocumentText } from "react-icons/io5";
+
   import { AiOutlineFontSize } from "react-icons/ai";
   import { BsTable, BsLayers } from "react-icons/bs";
   import { VscOpenPreview } from "react-icons/vsc";
+  import { SiTraefikproxy } from "react-icons/si";
   
   export const navMasterData = [
     {
@@ -29,13 +29,6 @@ import {
       items: "",
       note: "",
       link: ["/"],
-    },
-    {
-      Icon: MdLock,
-      title: "Authentication",
-      details: ["Login", "Registration", "Forget Password"],
-      items: "",
-      note: "",
     },
     {
       Icon: MdPerson,
@@ -53,9 +46,9 @@ import {
       link:['/productlist']
     },
     {
-      Icon: IoDocumentText,
-      title: "Invoices",
-      details: ["Invoice List", "Invoice Details"],
+      Icon: SiTraefikproxy,
+      title: "Category",
+      details: ["Category List", "Category View"],
       items: "",
       note: "",
     },
