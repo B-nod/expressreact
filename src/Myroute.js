@@ -14,6 +14,7 @@ import WomenPage from './pages/userpages/WomenPage'
 import KidPage from './pages/userpages/KidPage'
 import EmailVerify from './pages/userpages/EmailVerify'
 import Profile from './pages/userpages/Profile'
+import AddCategory from './components/admincomp/category/AddCategory'
 
 const Myroute = () => {
     const [isDarkmode, setIsDarkmode] = useState(true);
@@ -25,6 +26,8 @@ const Myroute = () => {
             <Route path='/admin' element={<AdminLayout  isDarkmode={isDarkmode} setIsDarkmode={setIsDarkmode} />}>
             <Route index  element={<Main isDarkmode={isDarkmode}/>}/>
             <Route path='productlist' element={<Products isDarkmode={isDarkmode} />}/>
+            <Route path='addcategory' element={<AddCategory/>}/>
+
             </Route>
             {/* route for normal user */}
             <Route path='/' element={<Layout/>}>

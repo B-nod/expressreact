@@ -43,14 +43,15 @@ import {
       details: ["Product List", "Product View", "Product Upload"],
       items: "",
       note: "NEW",
-      link:['/productlist']
+      link:['/admin/productlist']
     },
     {
       Icon: SiTraefikproxy,
       title: "Category",
-      details: ["Category List", "Category View"],
+      details: ["Category List", "Add Category"],
       items: "",
       note: "",
+      link:['/admin/categorylist', '/admin/addcategory']
     },
     {
       Icon: MdShoppingCart,
