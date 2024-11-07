@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.scrollbar::-webkit-scrollbar-track {
+}
+
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #0858f7;
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.hideScrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 20px;
+}

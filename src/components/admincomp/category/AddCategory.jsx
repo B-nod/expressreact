@@ -8,12 +8,7 @@ const AddCategory = () => {
   const [success, setSuccess] = useState(false);
 
   // destructure token from the localStorage
-  const { token } = isAuthenticated() || {}; // fallback to empty object
-
-  if (!token) {
-    setError("Authentication failed. Please log in.");
-    return null; // Early return if no token
-  }
+  const { token } = isAuthenticated() 
 
   const handleChange = (e) => {
     setError('');
@@ -24,21 +19,26 @@ const AddCategory = () => {
     e.preventDefault();
     setError('');
     setSuccess(false);
-    // make request to add category
+
+    console.log("Token:", token); // Check if token is valid
+    console.log("Category:", category_name); // Check category input
+
     addCategory(token, { category_name })
-      .then((data) => {
-        if (data.error) {
-          setError(data.error);
-        } else {
-          setError('');
-          setSuccess(true);
-          setCategory('');
-        }
-      })
-      .catch((err) => {
-        setError("Something went wrong.");
-      });
-  };
+        .then((data) => {
+            console.log("Data response:", data); // Check the response from API
+            if (data && data.error) {
+                setError(data.error);
+            } else {
+                setError('');
+                setSuccess(true);
+                setCategory('');
+            }
+        })
+        .catch((err) => {
+            console.error("Error in handleSubmit:", err);
+            setError("Something went wrong.");
+        });
+};
 
   // to show error message
   const showError = () => {
@@ -100,11 +100,12 @@ const AddCategory = () => {
                 <button className="bg-blue-600 text-white p-2 rounded">
                   <i className="material-icons"></i>
                 </button>
-                {showError()}
-                {showSuccess()}
+                
               </div>
               <div className="p-4">
-                <div className="mb-4">
+              {showError()}
+                {showSuccess()}
+                <div className="mt-2 mb-4">
                   <label className="block text-sm font-medium mb-2" htmlFor="category">
                     Category Name
                   </label>
