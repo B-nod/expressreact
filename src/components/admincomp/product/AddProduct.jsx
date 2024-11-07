@@ -13,7 +13,7 @@ const AddProduct = () => {
           setCategory(res.data)
         })
         .catch(err=>console.log(err))
-    })
+    },[])
     const { token, user } = isAuthenticated(); // Get user and token
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const AddProduct = () => {
         }
     }, [user]);
 
-    
+
     const[productData,setProductData]=useState({
         product_name:'',
         product_price:'',

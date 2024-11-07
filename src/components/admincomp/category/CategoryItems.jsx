@@ -14,7 +14,7 @@ const CategoryItems = ({ isDarkmode }) => {
         setCategory(res.data)
       })
       .catch(err=>console.log(err))
-  })
+  },[])
 
   return (
     <div className="w-full overflow-x-scroll scrollbar  ">
