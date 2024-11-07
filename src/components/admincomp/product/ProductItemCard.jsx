@@ -8,16 +8,14 @@ const ProductItemCard = ({
   isDarkmode,
   isChecked,
   data: {
-    image,
-    name,
-    des,
+    product_image,
+    product_name,
+    product_price,
     category,
-    brand,
-    price,
-    stock,
-    rating,
-    order,
-    sales,
+    countInStock,
+    product_description,
+    product_rating,
+   
   },
 }) => {
   const [isLocalChecked, setIsLocalChecked] = useState(false);
@@ -66,7 +64,7 @@ const ProductItemCard = ({
         border-opacity-10 ${isDarkmode ? "border-white" : "border-black"}`}
       >
         <div className="w-[40px] h-[40px] p-[4px] bg-white rounded-md">
-          <img src={image} alt="item" className="w-full h-full" />
+          <img src={product_image} alt="item" className="w-full h-full" />
         </div>
         <div className="flex flex-col gap-[5px]">
           <h1
@@ -74,14 +72,14 @@ const ProductItemCard = ({
               isDarkmode ? "text-white" : "text-black"
             }`}
           >
-            {name}
+            {product_name}
           </h1>
           <h1
             className={`w-[100px] truncate text-xs font-inter font-bold ${
               isDarkmode ? "text-gray-300" : "text-gray-500"
             }`}
           >
-            {des}
+            {product_description}
           </h1>
         </div>
       </div>
@@ -95,39 +93,20 @@ const ProductItemCard = ({
             isDarkmode ? "text-gray-300" : "text-gray-500"
           }`}
         >
-          {category}
+          {category.categeory_name}
         </h1>
       </div>
 
-      <div
-        className={`w-[100px] h-[full] px-[10px] flex items-center gap-[5px] border-r-[1px] 
-        border-opacity-10 ${isDarkmode ? "border-white" : "border-black"}`}
-      >
-        <h1
-          className={`text-sm font-inter font-normal ${
-            isDarkmode ? "text-gray-300" : "text-gray-500"
-          }`}
-        >
-          {brand}
-        </h1>
-      </div>
+     
 
       <div
         className={`w-[100px] h-[full] px-[10px] flex items-center gap-[5px] border-r-[1px] 
         border-opacity-10 ${isDarkmode ? "border-white" : "border-black"}`}
       >
         <div className="flex flex-col gap-[5px]">
-          {price.discount != null && (
-            <h1
-              className={`text-sm font-inter line-through ${
-                isDarkmode ? "text-gray-300" : "text-gray-500"
-              }`}
-            >
-              {price.discount}
-            </h1>
-          )}
+         
           <h1 className="text-base font-inter text-red-600">
-            {price.original}
+            {product_price}
           </h1>
         </div>
       </div>
@@ -141,7 +120,7 @@ const ProductItemCard = ({
             isDarkmode ? "text-gray-300" : "text-gray-500"
           }`}
         >
-          {stock}
+          {countInStock}
         </h1>
       </div>
 
@@ -156,14 +135,14 @@ const ProductItemCard = ({
               isDarkmode ? "text-white" : "text-black"
             }`}
           >
-            {rating[0]}
+            {product_rating[0]}
           </h1>
           <h1
             className={`text-sm font-inter font-normal ${
               isDarkmode ? "text-gray-300" : "text-gray-500"
             }`}
           >
-            {`(${rating[1]})`}
+            {`(${product_rating[1]})`}
           </h1>
         </div>
       </div>
@@ -177,22 +156,11 @@ const ProductItemCard = ({
             isDarkmode ? "text-gray-300" : "text-gray-500"
           }`}
         >
-          {order}
+          {product_description}
         </h1>
       </div>
 
-      <div
-        className={`w-[100px] h-[full] px-[10px] flex items-center gap-[5px] border-r-[1px] 
-        border-opacity-10 ${isDarkmode ? "border-white" : "border-black"}`}
-      >
-        <h1
-          className={`text-sm font-inter font-normal ${
-            isDarkmode ? "text-gray-300" : "text-gray-500"
-          }`}
-        >
-          {sales}
-        </h1>
-      </div>
+
 
       <div className="w-[150px] h-[full] px-[10px] flex items-center gap-[5px]">
         <div className="flex gap-[10px] items-center">

@@ -38,14 +38,6 @@ const ProductItemHeader = ({ setIsChecked }) => {
         </h1>
       </div>
 
-      <div
-        className="w-[100px] h-[full] px-[10px] flex items-center gap-[5px] border-r-[1px] border-white
-        border-opacity-20"
-      >
-        <h1 className="uppercase text-xs font-inter font-bold text-white">
-          brand
-        </h1>
-      </div>
 
       <div
         className="w-[100px] h-[full] px-[10px] flex items-center gap-[5px] border-r-[1px] border-white
@@ -79,18 +71,11 @@ const ProductItemHeader = ({ setIsChecked }) => {
         border-opacity-20"
       >
         <h1 className="uppercase text-xs font-inter font-bold text-white">
-          order
+          Description
         </h1>
       </div>
 
-      <div
-        className="w-[100px] h-[full] px-[10px] flex items-center gap-[5px] border-r-[1px] border-white
-        border-opacity-20"
-      >
-        <h1 className="uppercase text-xs font-inter font-bold text-white">
-          sales
-        </h1>
-      </div>
+    
 
       <div className="w-[150px] h-[full] px-[10px] flex items-center gap-[5px]">
         <h1 className="uppercase text-xs font-inter font-bold text-white">

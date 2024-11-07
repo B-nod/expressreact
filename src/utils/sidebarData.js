@@ -40,10 +40,10 @@ import {
     {
       Icon: GiOverInfinity,
       title: "Products",
-      details: ["Product List", "Product View", "Product Upload"],
+      details: ["Product List", "Add Product ", "Product Upload"],
       items: "",
       note: "NEW",
-      link:['/admin/productlist']
+      link:['/admin/productlist', '/admin/addproduct']
     },
     {
       Icon: SiTraefikproxy,

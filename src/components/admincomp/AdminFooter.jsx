@@ -16,7 +16,7 @@ const Adminfooter = ({ isDarkmode}) => {
             className="hover:text-[#2069FA] underline"
             target="_blink"
           >
-             Ngodu Sherpa
+             Eagle Trend
           </a>
         </h1>
       </div>

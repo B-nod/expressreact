@@ -114,7 +114,7 @@ const AddCategory = () => {
                     id="category"
                     placeholder="Type here"
                     className="w-full px-4 py-2 border rounded-md"
-                    onChange={handleChange}
+                    onChange={handleChange('category_name')}
                     value={category_name}
                   />
                   <button

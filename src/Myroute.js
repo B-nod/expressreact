@@ -16,6 +16,7 @@ import EmailVerify from './pages/userpages/EmailVerify'
 import Profile from './pages/userpages/Profile'
 import AddCategory from './components/admincomp/category/AddCategory'
 import Category from './components/admincomp/category/Category'
+import AddProduct from './components/admincomp/product/AddProduct'
 
 const Myroute = () => {
     const [isDarkmode, setIsDarkmode] = useState(true);
@@ -27,6 +28,7 @@ const Myroute = () => {
             <Route path='/admin' element={<AdminLayout  isDarkmode={isDarkmode} setIsDarkmode={setIsDarkmode} />}>
             <Route index  element={<Main isDarkmode={isDarkmode}/>}/>
             <Route path='productlist' element={<Products isDarkmode={isDarkmode} />}/>
+            <Route path='addproduct' element={<AddProduct/>}/>
             <Route path='addcategory' element={<AddCategory/>}/>
             <Route path='categorylist' element={<Category isDarkmode={isDarkmode} />}/>
 
