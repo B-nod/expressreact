@@ -22,8 +22,8 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          ftp-server: ${{ secrets.ftp_server }}
-          ftp-username: ${{ secrets.ftp_username }}
-          ftp-password: ${{ secrets.ftp_password }}
+          ftp-server: ftp.binodtamang.com
+          ftp-username: deploy@binodtamang1.com.np
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
           local-dir: build
           git-ftp-args: "--all --force"
