@@ -224,7 +224,7 @@ const AddProduct = () => {
                  <label className="block text-sm font-medium mb-2" htmlFor="category">
                   Category
                 </label>
-                 <select  className='border-[1px] border-black border-opacity-20 outline-none sm:text-sm text-xs w-full px-4 py-2 border rounded-md'>
+                 <select  className=' border-black border-opacity-20 outline-none sm:text-sm text-xs w-full px-4 py-2 border rounded-md'>
                     {categories.map((c,i)=>(
                               <option value={c._id} key={i}>
                                 {c.category_name}

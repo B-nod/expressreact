@@ -1,6 +1,7 @@
 import React from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { isAuthenticated, signout } from "../../auth";
+import logo from '../../assests/logoblue.png'
 
 const Header = () => {
   const navigate = useNavigate()
@@ -10,7 +11,7 @@ const Header = () => {
         <div className="flex flex-wrap items-center lg:gap-y-2 gap-4 w-full">
           <Link to="javascript:void(0)">
             <img
-              src="https://readymadeui.com/readymadeui.svg"
+              src={logo}
               alt="logo"
               className="w-36"
             />
