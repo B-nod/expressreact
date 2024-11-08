@@ -9,11 +9,11 @@ const Header = () => {
     <>
       <header className="flex bg-white border-b py-4 sm:px-8 px-6 font-[sans-serif] min-h-[80px] tracking-wide relative z-50">
         <div className="flex flex-wrap items-center lg:gap-y-2 gap-4 w-full">
-          <Link to="javascript:void(0)">
+          <Link to="javascript:void(0)" className="w-[200px] h-[60px]">
             <img
               src={logo}
               alt="logo"
-              className="w-36"
+              className="w-full h-full object-cover"
             />
           </Link>
 
