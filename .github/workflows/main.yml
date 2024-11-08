@@ -1,29 +1,32 @@
-name: Build and Deploy React App via FTP
+ on: 
+   push:
+     branches:
+       - master
+ name: 🚀 Deploy website on push
+ 
+ jobs:
+   web-deploy:
+     name: 🎉 Deploy
+     runs-on: ubuntu-latest
+     steps:
+     - name: 🚚 Get latest code
+       uses: actions/checkout@v3
 
-on:
-  push:
-    branches: [main]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Run React build script
-        run: |
-          npm install
-          npm run build
-        env:
-          CI: false
-
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          ftp-server: ftp.binodtamang.com
-          ftp-username: deploy@binodtamang1.com.np
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build
-          git-ftp-args: "--all --force"
+ - name: Use Node.js 16
+   uses: actions/setup-node@v2
+   with:
+     node-version: '16'
+   
+ - name: 🔨 Build Project
+   run: |
+     npm install
+     npm run build
+ 
+ - name: 📂 Sync files
+   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+   with:
+     server: ${{ secrets.GIT_CPANEL_REACT_SERVER }}
+     username: ${{ secrets.GIT_CPANEL_REACT_USER }}
+     password: ${{ secrets.GIT_CPANEL_REACT_PWD }}
+     protocol: ${{ secrets.GIT_CPANEL_REACT_PROTOCOL }}
+     local-dir: ./build/
