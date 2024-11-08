@@ -1,12 +1,13 @@
 import React from 'react'
 import Card from '../../components/usercomp/Card'
+import cover from '../../assests/cover.jpg'
 
 const Hompage = () => {
   return (
     <>
     <div className="relative bg-gradient-to-r from-purple-900 to-indigo-800 py-16 font-[sans-serif]">
       <div className="absolute inset-0">
-        <img src="https://readymadeui.com/cardImg.webp" alt="Background Image" className="w-full h-full object-cover opacity-50" />
+        <img src={cover} alt="Background Image" className="w-full h-full object-cover opacity-50" />
       </div>
 
       <div className="relative max-w-screen-lg mx-auto px-8 z-10 text-center text-white">
