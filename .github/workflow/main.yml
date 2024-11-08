@@ -15,13 +15,21 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      # Runs a single command using the runner's shell
-      - name: Run React build script
-        run: yarn && yarn build
+      # Sets up Node.js to run npm commands
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Use your project's Node.js version
+
+      # Install dependencies and run the build script using npm
+      - name: Run npm install and build
+        run: |
+          npm install
+          npm run build
         env:
           CI: false
 
@@ -32,4 +40,4 @@ jobs:
           ftp-server: ftp.binodtamang.com
           ftp-username: deploy@binodtamang1.com.np
           ftp-password: ${{ secrets.FTP_PASSWORD }}  # Note the underscore in the secret name
-          local-dir: build/  # Correct path to the build directory
+          local-dir: build  # Correct path to the build directory
