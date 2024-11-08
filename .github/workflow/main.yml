@@ -1,0 +1,35 @@
+# This is a basic workflow to help you get started with Actions
+name: Build and Deploy React App via FTP
+
+# Controls when the action will run. Triggers the workflow on push events but only for the main branch
+on:
+  push:
+    branches: [main]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build-and-deploy"
+  build-and-deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Runs a single command using the runner's shell
+      - name: Run React build script
+        run: yarn && yarn build
+        env:
+          CI: false
+
+      # Runs a set of commands to deploy via FTP
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: ftp.binodtamang.com
+          ftp-username: deploy@binodtamang1.com.np
+          ftp-password: ${{ secrets.FTP_PASSWORD }}  # Note the underscore in the secret name
+          local-dir: build/  # Correct path to the build directory
