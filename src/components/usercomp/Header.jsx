@@ -91,7 +91,7 @@ const Header = () => {
               <input
                 type="text"
                 placeholder="Search something..."
-                className="w-full text-sm bg-transparent outline-none pr-2"
+                className="w-full text-sm bg-transparent outline-none pr-2 border-none"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
