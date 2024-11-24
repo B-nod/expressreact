@@ -11,7 +11,7 @@ const Hompage = () => {
       </div>
 
       <div className="relative max-w-screen-lg mx-auto px-8 z-10 text-center text-white">
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">Welcome to Our Eagle Trend Store</h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">Welcome to Our</h1>
         <p className="text-lg md:text-xl mb-12">Experience excellence like never before with our exclusive products and services.</p>
         <button type="button" className="bg-indigo-600 hover:bg-indigo-700 text-white text-base tracking-wide px-6 py-3 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-xl">Get Started</button>
       </div>
