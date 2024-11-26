@@ -27,6 +27,8 @@ const ProductItemCard = ({
   const handleChecked = (e) => {
     setIsLocalChecked(e.target.checked);
   };
+  const baseUrl = "https://backend.binodtamang1.com.np";
+  const imageUrl = `${baseUrl}/${product_image.replace(/\\/g, "/")}`;
 
   return (
     <div
@@ -64,7 +66,7 @@ const ProductItemCard = ({
         border-opacity-10 ${isDarkmode ? "border-white" : "border-black"}`}
       >
         <div className="w-[40px] h-[40px] p-[4px] bg-white rounded-md">
-          <img src={product_image} alt="item" className="w-full h-full" />
+          <img    src={imageUrl} alt="item" className="w-full h-full" />
         </div>
         <div className="flex flex-col gap-[5px]">
           <h1
