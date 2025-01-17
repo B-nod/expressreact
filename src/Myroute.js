@@ -40,7 +40,7 @@ const Myroute = () => {
             <Route path='women' element={<WomenPage/>}/>
             <Route path='kid' element={<KidPage/>}/>
             <Route path='productdetail/:id' element={<ProductDetail/>}/>
-           
+            <Route path='cart' element={<Cart/>}/>
             <Route path='login' element={<Loginpage/>}/>
             <Route path='register' element={<Register/>}/>
             <Route path='email/confirmation/:token' element={<EmailVerify/>}/>
